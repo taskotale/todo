@@ -50,7 +50,7 @@ clickEdit.addEventListener('click', (e) => {
     document.getElementById('edit-btn').addEventListener('click', ()=>{
         document.body.removeChild(document.getElementById('popUp-window'))
         createPopUpWindow(addNewTodo(findEl));
-        editTodo(findEl, todoList)
+        editTodo(findEl, todoList, e.target)
     })
 })
 

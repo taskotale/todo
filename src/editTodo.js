@@ -1,4 +1,4 @@
-export default function editTodo(isEdit, todoList) {
+export default function editTodo(isEdit, todoList, domChange) {
     const editBtn = document.getElementById('update-btn')
     editBtn.addEventListener('click', () => {
         const titleNew = document.getElementById('title-new').value
@@ -10,7 +10,7 @@ export default function editTodo(isEdit, todoList) {
         isEdit.dueDate = dateNew;
         isEdit.description = descriptionNew;
         isEdit.priority = priorityNew;
-        console.log(todoList);
+        domChange.textContent = titleNew;
         document.body.removeChild(document.getElementById('popUp-window'))
 
     })
