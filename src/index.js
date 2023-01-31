@@ -4,7 +4,6 @@ import createTodo from './createTodo';
 import createPopUpWindow from './createPopUp';
 import addNewTodo from './addNewTodo';
 import submitNewTodo from './submitNewTodo';
-import createTodoCard from './createTodoCard'
 import editTodo from './editTodo';
 
 const todoList = [];
@@ -26,7 +25,6 @@ container.appendChild(listContainer(todoList));
 const footer = document.createElement('div');
 footer.classList.add('footer');
 
-
 const addNewBtn = document.createElement('button')
 addNewBtn.textContent = 'Add New ToDo'
 addNewBtn.addEventListener('click', () => {
@@ -43,14 +41,5 @@ page.appendChild(addNewBtn)
 page.appendChild(footer);
 document.body.appendChild(page);
 
-const clickEdit = document.getElementById('todo-list')
-clickEdit.addEventListener('click', (e) => {
-    const findEl = todoList.find(element => element.title === e.target.textContent)
-    createPopUpWindow(createTodoCard(findEl))
-    document.getElementById('edit-btn').addEventListener('click', ()=>{
-        document.body.removeChild(document.getElementById('popUp-window'))
-        createPopUpWindow(addNewTodo(findEl));
-        editTodo(findEl, todoList, e.target)
-    })
-})
+editTodo(todoList, createPopUpWindow, addNewTodo)
 

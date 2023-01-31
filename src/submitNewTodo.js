@@ -9,6 +9,9 @@ export default function submitSomething(newTodo, todoList) {
         todoList.push(newTodo(titleNew, dateNew, descriptionNew, priorityNew))
         const element = document.createElement('div')
         element.textContent = titleNew
+        const checkbox = document.createElement('input')
+        checkbox.type = 'checkbox'
+        element.appendChild(checkbox)
         document.getElementById('todo-list').appendChild(element)
         document.body.removeChild(document.getElementById('popUp-window'))
 

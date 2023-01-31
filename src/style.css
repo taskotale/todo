@@ -18,3 +18,7 @@
     width: 15rem;
     background-color: pink;
 }
+
+.mark-done {
+    text-decoration: line-through
+}

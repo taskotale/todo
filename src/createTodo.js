@@ -4,5 +4,6 @@ export default function createTodo(what, when, desc, level){
         dueDate: when,
         description: desc,
         priority: level,
+        isDone: false
     }
 }
