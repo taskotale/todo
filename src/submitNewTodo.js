@@ -15,5 +15,6 @@ export default function submitSomething(newTodo, todoList) {
         document.getElementById('todo-list').appendChild(element)
         document.body.removeChild(document.getElementById('popUp-window'))
 
+        localStorage.setItem('todoList', JSON.stringify(todoList))
     })
 }

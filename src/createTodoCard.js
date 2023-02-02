@@ -12,6 +12,9 @@ const createTodoCard = (item) => {
         const editBtn = document.createElement('button')
         editBtn.textContent = 'EDIT'
         editBtn.id='edit-btn'
+        const deleteBtn = document.createElement('button')
+        deleteBtn.textContent = 'DELETE'
+        deleteBtn.id='delete-btn'
 
         const todoCard = document.createElement('div')
 
@@ -20,6 +23,7 @@ const createTodoCard = (item) => {
         todoCard.appendChild(description)
         todoCard.appendChild(priority)
         todoCard.appendChild(editBtn)
+        todoCard.appendChild(deleteBtn)
 
         return todoCard
 }

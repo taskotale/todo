@@ -6,13 +6,7 @@ import addNewTodo from './addNewTodo';
 import submitNewTodo from './submitNewTodo';
 import editTodo from './editTodo';
 
-const todoList = [];
-
-
-todoList.push(createTodo('Take garbage out', '2023-03-17', 'garbage day on thus', 3));
-todoList.push(createTodo('Haircut', '2023-03-17', 'you should reserve', 1));
-todoList.push(createTodo('Eat', '2023-03-17', 'you have to eat', 3));
-todoList.push(createTodo('sleep', '2023-03-17', 'tonight', 3));
+const todoList = JSON.parse(localStorage.todoList);
 
 const header = document.createElement('div');
 header.classList.add('header')
@@ -42,4 +36,9 @@ page.appendChild(footer);
 document.body.appendChild(page);
 
 editTodo(todoList, createPopUpWindow, addNewTodo)
+
+var _lsTotal=0,_xLen,_x;for(_x in localStorage){ if(!localStorage.hasOwnProperty(_x)){continue;} _xLen= ((localStorage[_x].length + _x.length)* 2);_lsTotal+=_xLen; console.log(_x.substr(0,50)+" = "+ (_xLen/1024).toFixed(2)+" KB")};console.log("Total = " + (_lsTotal / 1024).toFixed(2) + " KB");
+console.log(_lsTotal)
+
+
 
